@@ -1,3 +1,6 @@
+/* These are CSS Variables below 
+      Note you have a special case called 'root' (https://developer.mozilla.org/en-US/docs/Web/CSS/:root) 
+*/
 html {
     --basil-green: #88a308;
     --dark-gray: #333333;
@@ -13,6 +16,7 @@ html {
     padding: 0;
   }
   
+
   ::selection {
     background: var(--basil-green);
     color: #fff;
@@ -50,6 +54,11 @@ html {
     color: var(--red);
   }
   
+  img {
+    width: 100%;
+    /* height: auto; < that is a default property*/ 
+  }
+
   li > h4 {
     margin-top: 12px;
   }

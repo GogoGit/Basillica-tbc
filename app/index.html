@@ -23,11 +23,26 @@
     </nav>
 
     <main class="content">
+      <!-- itemscope itemtype tells you that you are following a schema
+              see https://schema.org/docs/schemas.html
+      -->
       <article itemscope itemtype="http://schema.org/Recipe">
-        <img
+        <!-- <img
           src="img/pesto.jpg"
           alt="a bold of pesto with a wooden spoon in it"
-        />
+        /> -->
+        <!-- Note that the alt tag below is inferior -->
+        <!-- figure = can be moved without interfering with the presentation of data? -->
+        <figure>
+          <img src="img/pesto.jpg" itemprop="image" alt="Italian pesto" />
+          <figcaption>
+            Classic, simple basil pesto recipe with fresh basil leaves, pine nuts,
+            garlic, Romano or Parmesan cheese, extra virgin olive oil, and salt and
+            pepper.
+          </figcaption>
+        </figure>
+
+
 
         <h2 itemprop="name">Pesto</h2>
 
