@@ -1,75 +1,264 @@
+@import url(font/stylesheet.css);
+* {
+  color: red;
+}
+
 /* These are CSS Variables below 
       Note you have a special case called 'root' (https://developer.mozilla.org/en-US/docs/Web/CSS/:root) 
 */
 html {
-    --basil-green: #88a308;
-    --dark-gray: #333333;
-    --light-gray: #999999;
-    --orange: #f90;
-    --red: #f00;
-    --max-width: 840px;
-    --breakpoint: 640px;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
+  --basil-green: #88a308;
+  --dark-gray: #333333;
+  --light-gray: #e3e3e3;
+  --light-green: #f5faef;
+  --orange: #f90;
+  --light-orange: rgb(251, 190, 99);
+  --light-orange: #ebbd4e;
+  --red: #f00;
+  --max-width: 840px;
+  --radius: 4px;
+}
 
-  ::selection {
-    background: var(--basil-green);
-    color: #fff;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--basil-green);
+  color: #fff;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: var(--dark-gray);
+  max-width: var(--max-width);
+  /* Removed due to responsive design */
+  /* margin: 0 auto;
+  margin-top: 24px; */
+}
+
+h2,
+h3 {
+  color: var(--basil-green);
+  margin: 8px 0;
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.5s linear;
+}
+
+/* we don't want the nav to hover red!!!*/
+a:hover :not(nav) {
+  color: var(--red);
+}
+
+img {
+  width: 100%;
+  /* height: auto; < that is a default property*/
+}
+
+li > h4 {
+  margin-top: 12px;
+}
+
+header {
+  height: 120px;
+  background: var(--basil-green);
+  /*Top Left, Top Right, Bottom Right, Bottom Left*/
+  /* border-radius: 8px 8px 0px 0px; */
+  position: relative;
+}
+
+header h1 {
+  background: url(img/basil.png) no-repeat;
+  font-family: futura_stdlight, sans-serif;
+  font-weight: normal;
+  color: #fff;
+  font-size: 5rem;
+}
+
+/* Usually you only have 1 h1 header */
+/* header h1 {
+  font-family: futura_stdlight, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
+   In General you don't add images via CSS, you usually add them to the html file
+      we are creating the basil image on the header here.
+  background: url(img/basil.png) no-repeat;
+
+  color: #fff;
+  font-size: 5rem;
+  padding-left: 260px;
+  padding-top: 90px;
+
+  Using the absolute position property causes many problems
+      use the tranform property (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transforms)
+        it also is used in animation
+  transform: translate(-100px, -80px);
+} */
+header a.beta {
+  /*.svg:  Scalable Vector Graphic*/
+  background: url("img/burst.svg") no-repeat;
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(20deg);
+  transition: all 1s ease;
+}
+
+header a.beta:hover {
+  transform: rotate(0deg) scale(1.2);
+}
+
+nav {
+  background: var(--light-gray);
+  border-top: 0.5rem solid var(--light-orange);
+  padding: 0.5rem;
+  display: flex;
+  /*Vertical Centering???*/
+  align-items: center;
+  justify-content: space-between;
+  /*Allows the navigation to move onto multiple lines!!!!!!*/
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav li {
+  list-style: none;
+  /* margin-right: 0.5rem; */
+}
+
+nav a {
+  min-width: 120px;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 8px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+.nav-storeit a {
+  background-image: linear-gradient(to bottom, #fcde41 1%, #dfa910 100%);
+}
+
+.nav-storeit a:hover {
+  background-image: linear-gradient(to bottom, #dfa910 0%, #fcde41 100%);
+}
+
+.nav-pickit a {
+  background-image: linear-gradient(to bottom, #abc841 0%, #6b861e 100%);
+}
+
+.nav-pickit a:hover {
+  background-image: linear-gradient(to bottom, #6b861e 1%, #abc841 100%);
+}
+
+.nav-cookit a {
+  background-image: linear-gradient(to bottom, #6f89c7 0%, #344e8b 100%);
+}
+
+.nav-cookit a:hover {
+  background-image: linear-gradient(to bottom, #344e8b 1%, #6f89c7 100%);
+}
+
+/* Centering */
+/* nav p {
+  margin-right: auto;
+} */
+article,
+aside {
+  padding: 1rem;
+}
+
+aside li {
+  list-style: none;
+}
+
+article li,
+article ol {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: var(--basil-green);
+  padding: 1rem;
+  border-radius: 0 0 4px 4px;
+  margin-bottom: 2rem;
+}
+
+/* This will resize the website if this is larger than 640px
+    it will be 2 columns
+*/
+@media (min-width: 640px) and (min-width: 600px) {
   body {
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    color: var(--dark-gray);
-    max-width: var(--max-width);
     margin: 0 auto;
-    margin-top: 24px;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-areas: "header" "nav" "content" "footer";
   }
-  
-  h2,
-  h3 {
-    color: var(--basil-green);
-    margin: 8px 0;
-    font-size: 1.4rem;
-    letter-spacing: -1px;
+  header {
+    border-radius: 8px 8px 0px 0px;
+    grid-area: header;
   }
-  
-  h2 {
-    font-size: 2rem;
+  header h1 {
+    padding-left: 240px;
+    padding-top: 90px;
+    transform: translate(-100px, -80px);
+    background-position: top left;
   }
-  
-  a {
-    color: var(--orange);
-    text-decoration: none;
-    transition: color 0.5s linear;
+  nav {
+    grid-area: nav;
   }
-  
-  a:hover {
-    color: var(--red);
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1rem;
   }
-  
-  img {
-    width: 100%;
-    /* height: auto; < that is a default property*/ 
+  article {
+    grid-column: span 3;
   }
+  aside {
+    grid-column: span 2;
+    background: var(--light-green);
+    box-shadow: -4px 0px 4px #ddd;
+  }
+  footer {
+    grid-area: footer;
+  }
+  /*
+  In the event you wanted to move the header to the footer,
+  you could do this....
 
-  li > h4 {
-    margin-top: 12px;
+  header{
+    grid-area: footer;
   }
-  
-  aside li {
-    list-style: none;
-  }
-  
-  article li,
-  article ol {
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
+  */
+}
+
+/*# sourceMappingURL=styles.css.map */

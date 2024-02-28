@@ -1,0 +1,21 @@
+//Check out https://github.com/twbs/bootstrap and look at how they do there imports!
+
+/*Sass import:  This get's transpiled
+  '_' convention meaning that it's a partial file that is part of a bigger file
+  Also the Sass compiler will ignore these files unless you IMPORT them like below*/
+
+//Not order matters.. you want to import your variables 1st :)
+@import "imports/variables";
+
+@import "imports/base";
+@import "imports/header";
+@import "imports/nav";
+@import "imports/content";
+
+
+//you can use Java Script Commments 
+
+
+/*This is just a css import - it gets downloaded*/
+//@import url(font/stylesheet.css);
+
